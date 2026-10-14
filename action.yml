@@ -1,5 +1,5 @@
-name: 'Workflow Webhook Action'
-description: 'A Github workflow action to call a webhook with payload data from the event. Support for JSON or URL encoded endpoints.'
+name: 'RocHook Action'
+description: 'A GitHub workflow action to call a webhook with payload data from the event. Support for JSON or URL encoded endpoints, signed with HMAC-SHA1/SHA256 like a native GitHub webhook.'
 inputs:
   webhook_url:
     description: 'The HTTP URI of the webhook endpoint to invoke'
@@ -23,7 +23,10 @@ inputs:
     
 runs:
   using: 'docker'
-  image: 'docker://ghcr.io/distributhor/workflow-webhook-container:v2.0.2'
+  # Prebuilt alternative (published by .github/workflows/docker-publish.yml):
+  #   image: 'docker://ghcr.io/ivansslo/rochook:master'
+  # Building the local Dockerfile keeps the action self-contained:
+  image: 'Dockerfile'
 
 branding:
   icon: 'terminal'

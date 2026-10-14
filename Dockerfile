@@ -1,12 +1,12 @@
 FROM alpine
 
-LABEL "name"="bash"
-LABEL "repository"="https://github.com/distributhor/workflow-webhook"
-LABEL "version"="1.0.0"
+LABEL "name"="rochook"
+LABEL "repository"="https://github.com/ivansslo/rochook"
+LABEL "version"="2.0.2"
 
-LABEL com.github.actions.name="Workflow Webhook"
-LABEL com.github.actions.description="An action that will call a webhook from your Github workflow"
-LABEL com.github.actions.icon="upload-cloud"
+LABEL com.github.actions.name="RocHook"
+LABEL com.github.actions.description="A GitHub workflow action that calls a signed webhook from your GitHub workflow"
+LABEL com.github.actions.icon="terminal"
 LABEL com.github.actions.color="gray-dark"
 
 RUN apk add --no-cache bash curl openssl util-linux xxd jq
